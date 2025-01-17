@@ -1,9 +1,12 @@
 package vn.hung.baitap01;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,14 +22,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);//will hide the title not the title bar
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);//int flag, int mask
         setContentView(R.layout.activity_main);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button bttHide = findViewById(R.id.buttonHide);
+        bttHide.setOnClickListener(v -> {
+            // Tạo Intent để chuyển sang AnThanhTieuDeAndroid
+            Intent intent = new Intent(MainActivity.this, AnTieuDeActivity.class);
+            startActivity(intent);
+        });
+
+        Button btt4 = findViewById(R.id.button4);
+        btt4.setOnClickListener(v -> {
+            // Tạo Intent để chuyển sang AnThanhTieuDeAndroid
+            Intent intent = new Intent(MainActivity.this, InRaSoChanLeActivity.class);
+            startActivity(intent);
         });
     }
 }
