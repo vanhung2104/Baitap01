@@ -42,5 +42,12 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, InRaSoChanLeActivity.class);
             startActivity(intent);
         });
+
+        Button btt5 = findViewById(R.id.button5);
+        btt5.setOnClickListener(v -> {
+            // Tạo Intent để chuyển sang AnThanhTieuDeAndroid
+            Intent intent = new Intent(MainActivity.this, DaoNguocActivity.class);
+            startActivity(intent);
+        });
     }
 }

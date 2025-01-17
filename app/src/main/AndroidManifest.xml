@@ -24,6 +24,7 @@
 
         <activity android:name=".AnTieuDeActivity"></activity>
         <activity android:name=".InRaSoChanLeActivity"></activity>
+        <activity android:name=".DaoNguocActivity"></activity>
 
     </application>
 
